@@ -1,0 +1,14 @@
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.user {
+  border: 2px solid black;
+  padding: 20px;
+  width: 40%;
+  margin: 20px;
+}
