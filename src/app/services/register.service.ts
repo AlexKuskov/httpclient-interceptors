@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Register } from '../models/register.model';
+import { Credentials } from '../models/credentials.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +17,7 @@ export class RegisterService {
 
   constructor(private http: HttpClient) {}
 
-  register(): Observable<Register> {
-    return this.http.post<any>(this.ROOT_URL, {
-        "email": "eve.holt@reqres.in",
-        "password": "pistol"
-    }, this.options);
+  register(credentials: Credentials): Observable<Register> {
+    return this.http.post<Register>(this.ROOT_URL, credentials, this.options);
   }
 }

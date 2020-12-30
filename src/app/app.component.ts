@@ -21,11 +21,14 @@ export class AppComponent {
       this.userData = users;
     }));
 
-    this.subscription.add(this.userService.createUser().subscribe((res: any) => {
+    this.subscription.add(this.userService.createUser().subscribe((res: User) => {
       console.log('25: ', res);
     }));
 
-    this.subscription.add(this.registerService.register().subscribe((res: Register) => {
+    this.subscription.add(this.registerService.register({
+        email: "eve.holt@reqres.in",
+        password: "pistol"
+    }).subscribe((res: Register) => {
       console.log('25: ', res);
       localStorage.setItem('token', res.token);
     }));

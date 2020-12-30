@@ -23,8 +23,8 @@ export class UserService {
     );
   }
 
-  createUser(): Observable<any> {
-    return this.http.post<any>(this.ROOT_URL, {
+  createUser(): Observable<User> {
+    return this.http.post<User>(this.ROOT_URL, {
       name: "morpheus",
       job: "leader"
     });
